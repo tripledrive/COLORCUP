@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- ソースコード閲覧禁止！ -->
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="content-script-type" content="text/javascript">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/vue@3.1.5"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <title>PHANTOM</title>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="side1">
+            </div>
+            <div id="head1">
+                <h2 id="srvtitle">DRSKカラー杯オンライ...</h2>
+            </div>
+            
+            <div id="side2">
+                <section id="textch">
+                    <p>FIRST</p>
+                    <ul>
+                        <span class="btn" v-on:click="currentFlag = 0"><li><img src="img/textch_icon.png"><span class="chtitle">【必読】はじめに</span></li></span>
+                        <span class="btn" v-on:click="currentFlag = 1"><li><img src="img/textch_icon.png"><span class="chtitle">【必読】大会ルール</span></li></span>
+                        <span class="btn"><li><img src="img/textch_icon.png"><span class="chtitle">【必読】会場案内</span></li></span>
+                        <span class="btn"><li><img src="img/textch_icon.png"><span class="chtitle">連絡（大会開始前）</span></li></span>
+                        <span class="btn"><li><img src="img/textch_icon.png"><span class="chtitle">お知らせ・告知</span></li></span>
+                    </ul>
+                    <p>参加受付</p>
+                    <ul>
+                        <span class="btn"><li><img src="img/textch_icon.png"><span class="chtitle">参加受付</span></li></span>
+                        <span class="btn"><li><img src="img/textch_icon.png"><span class="chtitle">参加受付(当日枠用)</span></li></span>
+                    </ul>
+                </section>
+            </div>
+            
+            <div id="head2"></div>
+
+            <div id="main">
+                    <component v-bind:is="currentFlagComp"></component>
+            </div>
+
+            <div id="inputarea">
+                
+            </div>
+                
+            <div id="head3"></div>
+            
+            <div id="side3">
+                <section>
+                    <p>オンライン</p>
+                    <li v-for="item in players" class="players">
+                        <img :src="item.img">{{item.name}}
+                    </li>
+                </section>
+            </div>
+
+        </div>        
+    <!-- use script-->
+    <script src="index.js"></script>
+    </body>
+</html>
