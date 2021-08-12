@@ -119,6 +119,7 @@ hr{
     border-radius: 5px;
     margin-bottom: 3px;
     color: #8C8F92;
+    display: none;
 }
 
 #textch li:hover{
@@ -180,6 +181,38 @@ hr{
 }
 
 .players:hover{
+    background-color: #34373C;
+    color: #E1E7E4;
+}
+
+#inputarea input{
+    width: 80%;
+    height: 40%;
+    font-size: 100%;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top:5px;
+    margin-right:5px;
+    padding-left:15px;
+    background-color: #40444B;
+    color: #E1E7E4;
+    border: none;
+}
+
+#inputarea input ::placeholder{
+    color: #6C7077
+}
+
+#inputarea button{
+    font-size: 100%;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    color: #8C8F92;
+    background-color: #36393F;
+    border: none;
+}
+
+#inputarea button:hover{
     background-color: #34373C;
     color: #E1E7E4;
 }
