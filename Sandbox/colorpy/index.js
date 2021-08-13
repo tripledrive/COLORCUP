@@ -1,15 +1,30 @@
 "use strict";
 var open_flag = false;
 var check_flag = false;
+var noise = false;
+var color = false;
+var play = false;
 let answer = [
-    ["オープン","おーぷん","OPEN"],["ごりら"],["らっぱ"]
+    ["魔弾オープンブレイン","魔弾オープン・ブレイン","あ"],
+    ["バグルパズル","バグル・パズル"],
+    ["カラフルナスオ","カラフル・ナスオ"],
+    ["再生妖精スズラン"]
 ];
+let progress = [0,0,0,0]
+
+let target = document.getElementById('main');
+target.scrollIntoView(false);
 
     const Wrapping = Vue.createApp({
         data(){
             return{
                 currentFlag: 0,
                 bugFlag:0,
+                mode_1:"m", //mc cc mn cn 
+                mode_2:"c", //mono|color_clear|noizy
+                noise:0,
+                color:0,
+                play:0,
                 players:[
                     {name:"あああ",img:'img/drsk_icon.png'},
                     {name:"BBB",img:'img/drsk_icon.png'},
@@ -22,6 +37,9 @@ let answer = [
                 console.log(this.currentFlag);
                 console.log(this.bugFlag);
                 return 'text_' + String(this.currentFlag);
+            },
+            currentMode(){
+                return 'img_'+ String(this.currentFlag) + '_' + this.mode_1 + this.mode_2;
             }
         },
         methods:{
@@ -31,8 +49,21 @@ let answer = [
                         if(this.input == answer[this.currentFlag][i]){
                             open_flag = true
                             check_flag = true
+                            this.input = ""
+                            if(progress[this.currentFlag] == 0){
+                                jQuery('.whiteout').css('display','block');
+                                jQuery('.whiteout').fadeOut('normal');
+                            }
+                            progress[this.currentFlag] = 1
+                            
                             if(this.currentFlag == 0){
                                 jQuery('.st').css('display','block')
+                            }else if(this.currentFlag == 1){
+                                this.mode_2 = "n";
+                            }else if(this.currentFlag == 2){
+                                this.mode_1 = "c";
+                            }else if(this.currentFlag == 3){
+                                this.play = 1;
                             }
                             break;
                     }
@@ -40,7 +71,111 @@ let answer = [
                 }
             }
         }
-    })    
+    })
+    
+    // 魔弾オープン・ブレイン
+    Wrapping.component('img_0_mc',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/mc/q1_osbtprr.png" id="q1">'
+    })
+    Wrapping.component('img_0_cc',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/cc/q1_osbtprr.png" id="q1">'
+    })
+    Wrapping.component('img_0_mn',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/mn/q1_osbtprr.png" id="q1">'
+    })
+    Wrapping.component('img_0_mc',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/mc/q1_osbtprr.png" id="q1">'
+    })
+
+    // バグル・パズル
+    Wrapping.component('img_1_mc',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/mc/q4_pnzgir.png" id="q1">'
+    })
+    Wrapping.component('img_1_cc',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/cc/q4_pnzgir.png" id="q1">'
+    })
+    Wrapping.component('img_1_mn',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/mn/q4_pnzgir.png" id="q1">'
+    })
+    Wrapping.component('img_1_mc',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/mc/q4_pnzgir.png" id="q1">'
+    })
+
+    //カラフル・ナスオ
+    Wrapping.component('img_2_mc',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/mc/q2_cflsrg.png" id="q1">'
+    })
+    Wrapping.component('img_2_cc',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/cc/q2_cflsrg.png" id="q1">'
+    })
+    Wrapping.component('img_2_mn',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/mn/q2_cflsrg.png" id="q1">'
+    })
+    Wrapping.component('img_2_mc',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/mc/q2_cflsrg.png" id="q1">'
+    })
+
+    //再生妖精スズラン
+    Wrapping.component('img_3_mc',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/mc/q3_tbrrcn.png" id="q1">'
+    })
+    Wrapping.component('img_3_cc',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/cc/q3_tbrrcn.png" id="q1">'
+    })
+    Wrapping.component('img_3_mn',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/mn/q3_tbrrcn.png" id="q1">'
+    })
+    Wrapping.component('img_3_mc',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/mc/q3_tbrrcn.png" id="q1">'
+    })
 
     Wrapping.component('text_0',{
     data(){

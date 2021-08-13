@@ -186,7 +186,7 @@ hr{
 }
 
 #inputarea input{
-    width: 80%;
+    width: 90%;
     height: 40%;
     font-size: 100%;
     border-radius: 5px;
@@ -215,4 +215,18 @@ hr{
 #inputarea button:hover{
     background-color: #34373C;
     color: #E1E7E4;
+}
+
+#q1{
+    width: 600px;
+    margin:0 auto;
+    padding-bottom: 600px;
+    padding-top:50px;
+}
+
+.whiteout{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
 }

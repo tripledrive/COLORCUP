@@ -12,6 +12,7 @@
     </head>
     <body>
         <div id="wrap">
+            <img src="img/whiteout.png" class="whiteout">
             <div id="side1">
             </div>
             <div id="head1">
@@ -24,8 +25,8 @@
                     <ul>
                         <span class="btn" v-on:click="currentFlag = 0"><li class="st"><img src="img/textch_icon.png"><span class="chtitle">【必読】はじめに</span></li></span>
                         <span class="btn" v-on:click="currentFlag = 1"><li class="st"><img src="img/textch_icon.png"><span class="chtitle">【必読】大会ルール</span></li></span>
-                        <span class="btn"><li class="st"><img src="img/textch_icon.png"><span class="chtitle">【必読】会場案内</span></li></span>
-                        <span class="btn"><li class="st"><img src="img/textch_icon.png"><span class="chtitle">連絡（大会開始前）</span></li></span>
+                        <span class="btn" v-on:click="currentFlag = 2"><li class="st"><img src="img/textch_icon.png"><span class="chtitle">【必読】会場案内</span></li></span>
+                        <span class="btn" v-on:click="currentFlag = 3"><li class="st"><img src="img/textch_icon.png"><span class="chtitle">連絡（大会開始前）</span></li></span>
                         <span class="btn"><li class="st"><img src="img/textch_icon.png"><span class="chtitle">お知らせ・告知</span></li></span>
                     </ul>
                     <p>参加受付</p>
@@ -40,10 +41,11 @@
 
             <div id="main">
                     <component v-bind:is="currentFlagComp"></component>
+                    <component v-bind:is="currentMode"></component>
             </div>
 
             <div id="inputarea">
-                <input type="text" v-model="input" placeholder="ここに回答を入力"/>
+                <input type="text" v-model="input" placeholder="カードの正式名称を入力(スペース不要)"/>
                 <button v-on:click="checkanswer">回答</button>
             </div>
                 
