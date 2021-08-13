@@ -96,7 +96,7 @@ target.scrollIntoView(false);
         data(){
             return{}
         },
-        template:'<img src="img/mc/q1_osbtprr.PNG" id="q1">'
+        template:'<img src="img/cn/q1_osbtprr.PNG" id="q1">'
     })
 
     // バグル・パズル
@@ -122,7 +122,7 @@ target.scrollIntoView(false);
         data(){
             return{}
         },
-        template:'<img src="img/mc/q4_pnzgir.PNG" id="q1">'
+        template:'<img src="img/cn/q4_pnzgir.PNG" id="q1">'
     })
 
     //カラフル・ナスオ
@@ -148,7 +148,7 @@ target.scrollIntoView(false);
         data(){
             return{}
         },
-        template:'<img src="img/mc/q2_cflsrg.PNG" id="q1">'
+        template:'<img src="img/cn/q2_cflsrg.PNG" id="q1">'
     })
 
     //再生妖精スズラン
@@ -174,7 +174,7 @@ target.scrollIntoView(false);
         data(){
             return{}
         },
-        template:'<img src="img/mc/q3_tbrrcn.PNG" id="q1">'
+        template:'<img src="img/cn/q3_tbrrcn.PNG" id="q1">'
     })
 
     Wrapping.component('text_0',{
