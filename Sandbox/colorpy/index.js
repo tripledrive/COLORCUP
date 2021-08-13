@@ -78,25 +78,25 @@ target.scrollIntoView(false);
         data(){
             return{}
         },
-        template:'<img src="img/mc/q1_osbtprr.PNG" id="q1">'
+        template:'<img src="img/mc/q1_osbtprr.png" id="q1">'
     })
     Wrapping.component('img_0_cc',{
         data(){
             return{}
         },
-        template:'<img src="img/cc/q1_osbtprr.PNG" id="q1">'
+        template:'<img src="img/cc/q1_osbtprr.png" id="q1">'
     })
     Wrapping.component('img_0_mn',{
         data(){
             return{}
         },
-        template:'<img src="img/mn/q1_osbtprr.PNG" id="q1">'
+        template:'<img src="img/mn/q1_osbtprr.png" id="q1">'
     })
     Wrapping.component('img_0_mc',{
         data(){
             return{}
         },
-        template:'<img src="img/mc/q1_osbtprr.PNG" id="q1">'
+        template:'<img src="img/mc/q1_osbtprr.png" id="q1">'
     })
 
     // バグル・パズル
