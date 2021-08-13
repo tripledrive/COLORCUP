@@ -84,19 +84,19 @@ target.scrollIntoView(false);
         data(){
             return{}
         },
-        template:'<img src="img/cc/q1_osbtprr.png" id="q1">'
+        template:'<img src="img/cc/q1_osbtprr.PNG" id="q1">'
     })
     Wrapping.component('img_0_mn',{
         data(){
             return{}
         },
-        template:'<img src="img/mn/q1_osbtprr.png" id="q1">'
+        template:'<img src="img/mn/q1_osbtprr.PNG" id="q1">'
     })
-    Wrapping.component('img_0_mc',{
+    Wrapping.component('img_0_cn',{
         data(){
             return{}
         },
-        template:'<img src="img/mc/q1_osbtprr.png" id="q1">'
+        template:'<img src="img/mc/q1_osbtprr.PNG" id="q1">'
     })
 
     // バグル・パズル
@@ -118,7 +118,7 @@ target.scrollIntoView(false);
         },
         template:'<img src="img/mn/q4_pnzgir.PNG" id="q1">'
     })
-    Wrapping.component('img_1_mc',{
+    Wrapping.component('img_1_cn',{
         data(){
             return{}
         },
@@ -144,7 +144,7 @@ target.scrollIntoView(false);
         },
         template:'<img src="img/mn/q2_cflsrg.PNG" id="q1">'
     })
-    Wrapping.component('img_2_mc',{
+    Wrapping.component('img_2_cn',{
         data(){
             return{}
         },
@@ -170,7 +170,7 @@ target.scrollIntoView(false);
         },
         template:'<img src="img/mn/q3_tbrrcn.PNG" id="q1">'
     })
-    Wrapping.component('img_3_mc',{
+    Wrapping.component('img_3_cn',{
         data(){
             return{}
         },
