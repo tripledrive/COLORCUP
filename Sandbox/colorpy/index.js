@@ -5,7 +5,7 @@ var noise = false;
 var color = false;
 var play = false;
 let answer = [
-    ["魔弾オープンブレイン","魔弾オープン・ブレイン","あ"],
+    ["魔弾オープンブレイン","魔弾オープン・ブレイン"],
     ["バグルパズル","バグル・パズル"],
     ["カラフルナスオ","カラフル・ナスオ"],
     ["再生妖精スズラン"]
@@ -78,25 +78,25 @@ target.scrollIntoView(false);
         data(){
             return{}
         },
-        template:'<img src="img/mc/q1_osbtprr.png" id="q1">'
+        template:'<img src="img/mc/q1_osbtprr.PNG" id="q1">'
     })
     Wrapping.component('img_0_cc',{
         data(){
             return{}
         },
-        template:'<img src="img/cc/q1_osbtprr.png" id="q1">'
+        template:'<img src="img/cc/q1_osbtprr.PNG" id="q1">'
     })
     Wrapping.component('img_0_mn',{
         data(){
             return{}
         },
-        template:'<img src="img/mn/q1_osbtprr.png" id="q1">'
+        template:'<img src="img/mn/q1_osbtprr.PNG" id="q1">'
     })
     Wrapping.component('img_0_mc',{
         data(){
             return{}
         },
-        template:'<img src="img/mc/q1_osbtprr.png" id="q1">'
+        template:'<img src="img/mc/q1_osbtprr.PNG" id="q1">'
     })
 
     // バグル・パズル
@@ -104,25 +104,25 @@ target.scrollIntoView(false);
         data(){
             return{}
         },
-        template:'<img src="img/mc/q4_pnzgir.png" id="q1">'
+        template:'<img src="img/mc/q4_pnzgir.PNG" id="q1">'
     })
     Wrapping.component('img_1_cc',{
         data(){
             return{}
         },
-        template:'<img src="img/cc/q4_pnzgir.png" id="q1">'
+        template:'<img src="img/cc/q4_pnzgir.PNG" id="q1">'
     })
     Wrapping.component('img_1_mn',{
         data(){
             return{}
         },
-        template:'<img src="img/mn/q4_pnzgir.png" id="q1">'
+        template:'<img src="img/mn/q4_pnzgir.PNG" id="q1">'
     })
     Wrapping.component('img_1_mc',{
         data(){
             return{}
         },
-        template:'<img src="img/mc/q4_pnzgir.png" id="q1">'
+        template:'<img src="img/mc/q4_pnzgir.PNG" id="q1">'
     })
 
     //カラフル・ナスオ
@@ -130,25 +130,25 @@ target.scrollIntoView(false);
         data(){
             return{}
         },
-        template:'<img src="img/mc/q2_cflsrg.png" id="q1">'
+        template:'<img src="img/mc/q2_cflsrg.PNG" id="q1">'
     })
     Wrapping.component('img_2_cc',{
         data(){
             return{}
         },
-        template:'<img src="img/cc/q2_cflsrg.png" id="q1">'
+        template:'<img src="img/cc/q2_cflsrg.PNG" id="q1">'
     })
     Wrapping.component('img_2_mn',{
         data(){
             return{}
         },
-        template:'<img src="img/mn/q2_cflsrg.png" id="q1">'
+        template:'<img src="img/mn/q2_cflsrg.PNG" id="q1">'
     })
     Wrapping.component('img_2_mc',{
         data(){
             return{}
         },
-        template:'<img src="img/mc/q2_cflsrg.png" id="q1">'
+        template:'<img src="img/mc/q2_cflsrg.PNG" id="q1">'
     })
 
     //再生妖精スズラン
@@ -156,25 +156,25 @@ target.scrollIntoView(false);
         data(){
             return{}
         },
-        template:'<img src="img/mc/q3_tbrrcn.png" id="q1">'
+        template:'<img src="img/mc/q3_tbrrcn.PNG" id="q1">'
     })
     Wrapping.component('img_3_cc',{
         data(){
             return{}
         },
-        template:'<img src="img/cc/q3_tbrrcn.png" id="q1">'
+        template:'<img src="img/cc/q3_tbrrcn.PNG" id="q1">'
     })
     Wrapping.component('img_3_mn',{
         data(){
             return{}
         },
-        template:'<img src="img/mn/q3_tbrrcn.png" id="q1">'
+        template:'<img src="img/mn/q3_tbrrcn.PNG" id="q1">'
     })
     Wrapping.component('img_3_mc',{
         data(){
             return{}
         },
-        template:'<img src="img/mc/q3_tbrrcn.png" id="q1">'
+        template:'<img src="img/mc/q3_tbrrcn.PNG" id="q1">'
     })
 
     Wrapping.component('text_0',{
