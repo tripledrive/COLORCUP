@@ -8,7 +8,9 @@ let answer = [
     ["魔弾オープンブレイン","魔弾オープン・ブレイン"],
     ["バグルパズル","バグル・パズル"],
     ["カラフルナスオ","カラフル・ナスオ"],
-    ["再生妖精スズラン"]
+    ["再生妖精スズラン"],
+    [""],
+    ["オールデリート","オール・デリート"]
 ];
 let progress = [0,0,0,0]
 
@@ -36,7 +38,12 @@ target.scrollIntoView(false);
             currentFlagComp(){
                 console.log(this.currentFlag);
                 console.log(this.bugFlag);
-                return 'text_' + String(this.currentFlag);
+                if(this.currentFlag == 4){
+                    console.log('text_' + String(this.currentFlag) + '_' + String(this.play))
+                    return 'text_' + String(this.currentFlag) + '_' + String(this.play);
+                }else{
+                    return 'text_' + String(this.currentFlag);
+                }
             },
             currentMode(){
                 return 'img_'+ String(this.currentFlag) + '_' + this.mode_1 + this.mode_2;
@@ -64,6 +71,8 @@ target.scrollIntoView(false);
                                 this.mode_1 = "c";
                             }else if(this.currentFlag == 3){
                                 this.play = 1;
+                            }else if(this.currentFlag == 4){
+                                window.location.href('https://note.com/preview/n468b2d55a290?prev_access_key=bfb22913e60e36c1be53f6b3e62f08c5')
                             }
                             break;
                     }
@@ -177,6 +186,72 @@ target.scrollIntoView(false);
         template:'<img src="img/cn/q3_tbrrcn.PNG" id="q1">'
     })
 
+    //オールデリート
+    Wrapping.component('img_5_mc',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/mc/q5_ocdrra.PNG" id="q1">'
+    })
+    Wrapping.component('img_5_cc',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/cc/q5_ocdrra.PNG" id="q1">'
+    })
+    Wrapping.component('img_5_mn',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/mn/q5_ocdrra.PNG" id="q1">'
+    })
+    Wrapping.component('img_5_cn',{
+        data(){
+            return{}
+        },
+        template:'<img src="img/cn/q5_ocdrra.PNG" id="q1">'
+    })
+
+    //動画ページ
+    Wrapping.component('img_4_mc',{
+        data(){
+            return{}
+        },
+        template:`
+        <img src="img/cn/q3_tbrrcn.PNG" class="q5_1">
+        <img src="img/cn/q3_tbrrcn.PNG" class="q5_2">
+        `
+    })
+    Wrapping.component('img_4_cc',{
+        data(){
+            return{}
+        },
+        template:`
+        <img src="img/cn/q3_tbrrcn.PNG" class="q5_1">
+        <img src="img/cn/q3_tbrrcn.PNG" class="q5_2">
+        `
+    })
+    Wrapping.component('img_4_mn',{
+        data(){
+            return{}
+        },
+        template:`
+        <img src="img/cn/q3_tbrrcn.PNG" class="q5_1">
+        <img src="img/cn/q3_tbrrcn.PNG" class="q5_2">
+        `
+    })
+    Wrapping.component('img_4_cn',{
+        data(){
+            return{}
+        },
+        template:`
+        <img src="img/cn/q3_tbrrcn.PNG" class="q5_1">
+        <img src="img/cn/q3_tbrrcn.PNG" class="q5_2">
+        `
+    })
+    
+    
+
     Wrapping.component('text_0',{
     data(){
         return{
@@ -208,122 +283,156 @@ target.scrollIntoView(false);
     <hr width="95%" noshade="">
     <p id="top_tex">{{subtitle}}</p>
     <h2 id="top">{{title}}</h2>`
-})
-Wrapping.component('text_1',{
-    data(){
-        return{
-            imgs:'img/drsk_icon.png',
-        }
-    },
-    template:`
-    <div class="postage">
-    <div class="icon">
-        <img :src="imgs">
-    </div>
-    <div class="text">
-        <span class="name role_orgn">ドラ介(主催)</span><br>
-        <span class="text">
-        【大会の流れ】<br>
-        <br>
-        ■大会開始前(受付)<br>
-        来場されましたらまず#参加受付 もしくは#参加受付（当日枠用） へ<br>
-        ・Tonamelで入力したエントリー名<br>
-        ・大会詳細の確認の有無(ルール確認しましたと一言お願いします)<br>
-        をお送りください。<br>
-        その後運営より「参加者」のロールが付与されれば、エントリー完了です。<br>
-        <br>
-        <br>
-        ■各試合開始前<br>
-        各予選の対戦組み合わせはTonamelのトーナメント表にて発表しその旨をdiscord内で@参加者宛にアナウンスさせて頂きます。<br>
-        アナウンス後は指定されたテーブルにご着席ください。<br>
-        試合開始タイミングは @参加者 で通知いたします。<br>
-        <br>
-        ■各試合終了後<br>
-        勝者の方は#対戦結果受付にてテーブル番号と結果を書き込んでください。<br>
-        (必ず勝者が書き込むようお願いします)<br>
-        <br>
-        <br>
-        ■サブイベント<br>
-        謎解きはスイスドロー3回戦終了時より #９枚の謎（step１）にて解禁されます。<br>
-        お手隙の際にぜひお楽しみください</span>
-    </div>
-    </div>
-    <hr width="95%" noshade="">`
-})
-Wrapping.component('text_0_x',{
-    data(){
-        return{
-            role:'role_orgn',
-            imgs:'img/drsk_icon.png',
-            subtitle: "ここが、このサーバーの始まりです。",
-            title: "DRSKカラー杯オンラインserverへようこそ"
-        }
-    },
-    template:`
-    <div class="postage">
-    <div class="icon">
-        <img :src="imgs">
-    </div>
-    <div class="text">
-        <span class="name role_orgn">ド███催)</span><br>
-        <span class="text">【大会███要】<br>
+    })
+    Wrapping.component('text_1',{
+        data(){
+            return{
+                imgs:'img/drsk_icon.png',
+            }
+        },
+        template:`
+        <div class="postage">
+        <div class="icon">
+            <img :src="imgs">
+        </div>
+        <div class="text">
+            <span class="name role_orgn">ドラ介(主催)</span><br>
+            <span class="text">
+            【大会の流れ】<br>
             <br>
-            DRSK██████杯オンラインサーバーに入室頂き誠にありがとうございます。<br>
-            当サーバーは皆様にDRSKカラー杯運███の営むイベントを楽しんで頂くサーバーです。<br>
+            ■大会開始前(受付)<br>
+            来場されましたらまず#参加受付 もしくは#参加受付（当日枠用） へ<br>
+            ・Tonamelで入力したエントリー名<br>
+            ・大会詳細の確認の有無(ルール確認しましたと一言お願いします)<br>
+            をお送りください。<br>
+            その後運営より「参加者」のロールが付与されれば、エントリー完了です。<br>
             <br>
             <br>
-            イベントにおき█████████ャーマッチ他、試合風景をビデオ██████を行う場合があります。<br>
-            撮影した映像はYouTubeやTwitterで使用させ███場合がありま███。<br>
-            入賞者のデッ██████はツイッター上で公開させてい███場合がございます。<br>
-            あ███じめご了承ください。</span>
-    </div>
-    </div>
-    <hr width="95%" noshade="">
-    <p id="top_tex">{{subtitle}}</p>
-    <h2 id="top">{{title}}</h2>`
-})
-Wrapping.component('text_1_x',{
-    data(){
-        return{
-            imgs:'img/drsk_icon.png',
-        }
-    },
-    template:`
-    <div class="postage">
-    <div class="icon">
-        <img :src="imgs">
-    </div>
-    <div class="text">
-        <span class="name role_orgn">ドラ██████主催)</span><br>
-        <span class="text">
-        【大会の流れ】<br>
-        <br>
-        ■大会開始前(受付)<br>
-        来場されましたらまず#参加受付 もしくは#参加受付（当日枠用） へ<br>
-        ・Tonamelで入力したエントリー名<br>
-        ・大会詳細███確認の有無(ルール確認し█████████言お願いします)<br>
-        をお送りください。<br>
-        その後運営より「参加者」のロールが付与███れれば██████トリー完了です。<br>
-        <br>
-        <br>
-        ■各試合開始前<br>
-        各予選の対戦組み合わせはTonamelのトーナメント表にて発表しその旨をdiscord内で@参加者宛にアナウンスさせて頂きます。<br>
-        アナウンス█████████れたテーブルにご着席ください。<br>
-        試合開始タイミングは @参加者 で通知いた███。<br>
-        <br>
-        ■各試合終了後<br>
-        勝者の方は#対戦結果受付にてテー███ル番号と結果を書き込んでください。<br>
-        (必ず勝███き込むようお願いします)<br>
-        <br>
-        <br>
-        ■サブイベント<br>
-        謎解きはスイスドロー3回戦終了時より #█████████（step１）にて解禁されます。<br>
-        お手隙の際にぜひお楽しみください</span>
-    </div>
-    </div>
-    <hr width="95%" noshade="">`
-})
+            ■各試合開始前<br>
+            各予選の対戦組み合わせはTonamelのトーナメント表にて発表しその旨をdiscord内で@参加者宛にアナウンスさせて頂きます。<br>
+            アナウンス後は指定されたテーブルにご着席ください。<br>
+            試合開始タイミングは @参加者 で通知いたします。<br>
+            <br>
+            ■各試合終了後<br>
+            勝者の方は#対戦結果受付にてテーブル番号と結果を書き込んでください。<br>
+            (必ず勝者が書き込むようお願いします)<br>
+            <br>
+            <br>
+            ■サブイベント<br>
+            謎解きはスイスドロー3回戦終了時より #９枚の謎（step１）にて解禁されます。<br>
+            お手隙の際にぜひお楽しみください</span>
+        </div>
+        </div>
+        <hr width="95%" noshade="">`
+    })
+    Wrapping.component('text_2',{
+        data(){
+            return{
+                imgs:'img/drsk_icon.png',
+            }
+        },
+        template:`
+        <div class="postage">
+        <div class="icon">
+            <img :src="imgs">
+        </div>
+        <div class="text">
+            <span class="name role_orgn">ドラ介(主催)</span><br>
+            <span class="text">
+            【謎解きルール】<br>
+            <br>
+            決勝戦が始まり次第、それぞれのテキストチャンネルに謎が張り出されます。<br>
+            各謎を解き、すべてのクリアを目指してください。<br>
+            また、本ページは更新(F5)や戻るボタンを押すと進捗状況がリセットされます。<br>
+            十分にご注意ください。<br>
+            <br>
+        </div>
+        </div>
+        <hr width="95%" noshade="">
+        `
+    })
+    Wrapping.component('text_3',{
+        data(){
+            return{
+                imgs:'img/drsk_icon.png',
+            }
+        },
+        template:`
+        <div class="postage">
+        <div class="icon">
+            <img :src="imgs">
+        </div>
+        <div class="text">
+            <span class="name role_orgn">ドラ介(主催)</span><br>
+            <span class="text">
+            【会場案内】<br>
+            <br>
+            ■FIRST<br>
+            #【必読】はじめに <br>
+            大会概要、主催挨拶が記述されています。<br>
+            参加前に必ず一読お願いします。<br>
+            <br>
+            #【必読】大会ルール<br>
+            当大会のルールが記述されています。<br>
+            参加前に必ず一読お願いします。<br>
+            <br>
+            #【必読】会場案内<br>
+            ここです。<br>
+            参加前に必ず一読お願いします。<br>
+            <br>
+            #連絡（大会開始前） <br>
+            大会開始前(参加者ロール付与前)に全体もしくは個人に連絡を取る際に使う場です。<br>
+            <br>
+            #お知らせ・告知 <br>
+            カラー杯に関する告知や宣伝を行っている場です。<br>
+            次回大会やイベントの予定も載せてあるので、お手隙の際にぜひご覧ください。<br>
+            </div>
+            </div>
+            <hr width="95%" noshade="">
+        `
+    })
+    Wrapping.component('text_5',{
+        data(){
+            return{
+                imgs:'img/no_icon.png',
+            }
+        },
+        template:`
+        <div class="postage">
+        <div class="icon">
+            <img :src="imgs">
+        </div>
+        <div class="text">
+            <span class="name role_orgn">■■■■■■</span><br>
+            <span class="text">
+            現在、このチャンネルには投稿がありません。<br>
+            <br>
+        </div>
+        </div>
+        <hr width="95%" noshade="">
+        `
+    })
 
+    //最終回答ページ
+    Wrapping.component('text_4_0',{
+        data(){
+            return{
+                imgs:'',
+            }
+        },
+        template:`
+        <div class="voicepage">
+            <component v-bind:is="currentMode"></component>
+        </div>`
+    })
+    Wrapping.component('text_4_1',{
+        data(){
+            return{
+                imgs:'',
+            }
+        },
+        template:`<div class="voicepage"></div>`
+    })
 Wrapping.mount('#wrap')
 
 　　var btn = document.getElementsByClassName('btn');

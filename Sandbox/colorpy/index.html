@@ -27,12 +27,13 @@
                         <span class="btn" v-on:click="currentFlag = 1"><li class="st"><img src="img/textch_icon.png"><span class="chtitle">【必読】大会ルール</span></li></span>
                         <span class="btn" v-on:click="currentFlag = 2"><li class="st"><img src="img/textch_icon.png"><span class="chtitle">【必読】会場案内</span></li></span>
                         <span class="btn" v-on:click="currentFlag = 3"><li class="st"><img src="img/textch_icon.png"><span class="chtitle">連絡（大会開始前）</span></li></span>
-                        <span class="btn"><li class="st"><img src="img/textch_icon.png"><span class="chtitle">お知らせ・告知</span></li></span>
+                        <span class="btn" v-on:click="currentFlag = 5"><li class="st"><img src="img/textch_icon.png"><span class="chtitle">お知らせ・告知</span></li></span>
                     </ul>
-                    <p>参加受付</p>
+                    <p>対戦テーブル</p>
                     <ul>
-                        <span class="btn"><li class="st"><img src="img/textch_icon.png"><span class="chtitle">参加受付</span></li></span>
-                        <span class="btn"><li class="st"><img src="img/textch_icon.png"><span class="chtitle">参加受付(当日枠用)</span></li></span>
+                        <span class="btn" v-on:click="currentFlag = 4"><li class="st voice"><img src="img/voicech_icon.png"><span class="chtitle">対戦テーブル1</span></li></span>
+                        <li class="st player"><img src="img/drsk_icon.png" ><span class="chplayer">プレイヤー1</span><span class="live">ライブ</span></li>
+                        <li class="st player"><img src="img/drsk_icon.png" ><span class="chplayer">プレイヤー2</span><span class="live">ライブ</span></li>
                     </ul>
                 </section>
             </div>
@@ -44,7 +45,7 @@
                     <component v-bind:is="currentMode"></component>
             </div>
 
-            <div id="inputarea">
+            <div class="inputarea">
                 <input type="text" v-model="input" placeholder="カードの正式名称を入力(スペース不要)"/>
                 <button v-on:click="checkanswer">回答</button>
             </div>
