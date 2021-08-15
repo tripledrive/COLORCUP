@@ -41,6 +41,7 @@
             <div id="head2"></div>
 
             <div id="main">
+                    <component v-bind:is="answer"></component>
                     <component v-bind:is="currentFlagComp"></component>
                     <component v-bind:is="currentMode"></component>
             </div>

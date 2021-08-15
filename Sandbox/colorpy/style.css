@@ -281,19 +281,19 @@ hr{
 }
 
 .q5_1{
-    position: absolute;
+    position: sticky;
     left: 36%;
     top: 0;
     margin-top: 55px;
     border-radius: 8px;
-    width: 750px;
+    width: 700px;
 }
 
 .q5_2{
-    position: absolute;
+    position: sticky;
     left: 36%;
     top: 0;
     margin-top: 490px;
     border-radius: 8px;
-    width: 750px;
+    width: 700px;
 }

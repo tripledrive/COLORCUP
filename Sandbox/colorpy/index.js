@@ -12,7 +12,7 @@ let answer = [
     [""],
     ["オールデリート","オール・デリート"]
 ];
-let progress = [0,0,0,0]
+let progress = [0,0,0,0,0,0]
 
 let target = document.getElementById('main');
 target.scrollIntoView(false);
@@ -31,7 +31,8 @@ target.scrollIntoView(false);
                     {name:"あああ",img:'img/drsk_icon.png'},
                     {name:"BBB",img:'img/drsk_icon.png'},
                     {name:"ccc",img:'img/drsk_icon.png'}],
-                input:""
+                input:"",
+                progress:[0,0,0,0,0,0]
             }
         },
         computed:{
@@ -47,6 +48,9 @@ target.scrollIntoView(false);
             },
             currentMode(){
                 return 'img_'+ String(this.currentFlag) + '_' + this.mode_1 + this.mode_2;
+            },
+            answer(){
+                return 'ans_' + String(this.currentFlag) + '_' + String(this.progress[this.currentFlag]);
             }
         },
         methods:{
@@ -59,10 +63,8 @@ target.scrollIntoView(false);
                             this.input = ""
                             if(progress[this.currentFlag] == 0){
                                 jQuery('.whiteout').css('display','block');
-                                jQuery('.whiteout').fadeOut('normal');
                             }
                             progress[this.currentFlag] = 1
-                            
                             if(this.currentFlag == 0){
                                 jQuery('.st').css('display','block')
                             }else if(this.currentFlag == 1){
@@ -71,9 +73,12 @@ target.scrollIntoView(false);
                                 this.mode_1 = "c";
                             }else if(this.currentFlag == 3){
                                 this.play = 1;
-                            }else if(this.currentFlag == 4){
-                                window.location.href('https://note.com/preview/n468b2d55a290?prev_access_key=bfb22913e60e36c1be53f6b3e62f08c5')
+                            }else if(this.currentFlag == 5){
+                                jQuery('.whiteout').css('display','block');
+                                window.location.href = "https://note.com/preview/n468b2d55a290?prev_access_key=bfb22913e60e36c1be53f6b3e62f08c5";
                             }
+                            jQuery('.whiteout').fadeOut('normal');
+                            this.progress[this.currentFlag] = 1
                             break;
                     }
                     if(!check_flag){}
@@ -107,6 +112,34 @@ target.scrollIntoView(false);
         },
         template:'<img src="img/cn/q1_osbtprr.PNG" id="q1">'
     })
+    Wrapping.component('ans_0_1',{
+        data(){
+            return{
+                imgs_d:'img/drsk_icon.png',
+                imgs_y:'img/no_icon.png'
+            }
+        },
+        template:`
+        <div class="postage">
+    <div class="icon">
+        <img :src="imgs_d">
+    </div>
+    <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">正解です。</span>
+    </div>
+    </div>
+        <div class="postage">
+    <div class="icon">
+        <img :src="imgs_y">
+    </div>
+    <div class="text">
+        <span class="name">あなた</span><br>
+        <span class="text">魔弾オープン・ブレイン
+    </div>
+    </div>
+        `
+    })
 
     // バグル・パズル
     Wrapping.component('img_1_mc',{
@@ -132,6 +165,34 @@ target.scrollIntoView(false);
             return{}
         },
         template:'<img src="img/cn/q4_pnzgir.PNG" id="q1">'
+    })
+    Wrapping.component('ans_1_1',{
+        data(){
+            return{
+                imgs_d:'img/drsk_icon.png',
+                imgs_y:'img/no_icon.png'
+            }
+        },
+        template:`
+        <div class="postage">
+    <div class="icon">
+        <img :src="imgs_d">
+    </div>
+    <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">正解です。</span>
+    </div>
+    </div>
+        <div class="postage">
+    <div class="icon">
+        <img :src="imgs_y">
+    </div>
+    <div class="text">
+        <span class="name">あなた</span><br>
+        <span class="text">バグル・パズル
+    </div>
+    </div>
+        `
     })
 
     //カラフル・ナスオ
@@ -159,6 +220,34 @@ target.scrollIntoView(false);
         },
         template:'<img src="img/cn/q2_cflsrg.PNG" id="q1">'
     })
+    Wrapping.component('ans_2_1',{
+        data(){
+            return{
+                imgs_d:'img/drsk_icon.png',
+                imgs_y:'img/no_icon.png'
+            }
+        },
+        template:`
+        <div class="postage">
+    <div class="icon">
+        <img :src="imgs_d">
+    </div>
+    <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">正解です。</span>
+    </div>
+    </div>
+        <div class="postage">
+    <div class="icon">
+        <img :src="imgs_y">
+    </div>
+    <div class="text">
+        <span class="name">あなた</span><br>
+        <span class="text">カラフル・ナスオ
+    </div>
+    </div>
+        `
+    })
 
     //再生妖精スズラン
     Wrapping.component('img_3_mc',{
@@ -184,6 +273,34 @@ target.scrollIntoView(false);
             return{}
         },
         template:'<img src="img/cn/q3_tbrrcn.PNG" id="q1">'
+    })
+    Wrapping.component('ans_3_1',{
+        data(){
+            return{
+                imgs_d:'img/drsk_icon.png',
+                imgs_y:'img/no_icon.png'
+            }
+        },
+        template:`
+        <div class="postage">
+    <div class="icon">
+        <img :src="imgs_d">
+    </div>
+    <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">正解です。</span>
+    </div>
+    </div>
+        <div class="postage">
+    <div class="icon">
+        <img :src="imgs_y">
+    </div>
+    <div class="text">
+        <span class="name">あなた</span><br>
+        <span class="text">再生妖精スズラン
+    </div>
+    </div>
+        `
     })
 
     //オールデリート
@@ -213,13 +330,15 @@ target.scrollIntoView(false);
     })
 
     //動画ページ
+    //「再生」が解かれていない場合の画像を置く
+    //レイアウトまだ詰められてないので後日
+    //長方形の画像をセットする
     Wrapping.component('img_4_mc',{
         data(){
             return{}
         },
         template:`
         <img src="img/cn/q3_tbrrcn.PNG" class="q5_1">
-        <img src="img/cn/q3_tbrrcn.PNG" class="q5_2">
         `
     })
     Wrapping.component('img_4_cc',{
@@ -228,7 +347,6 @@ target.scrollIntoView(false);
         },
         template:`
         <img src="img/cn/q3_tbrrcn.PNG" class="q5_1">
-        <img src="img/cn/q3_tbrrcn.PNG" class="q5_2">
         `
     })
     Wrapping.component('img_4_mn',{
@@ -237,7 +355,6 @@ target.scrollIntoView(false);
         },
         template:`
         <img src="img/cn/q3_tbrrcn.PNG" class="q5_1">
-        <img src="img/cn/q3_tbrrcn.PNG" class="q5_2">
         `
     })
     Wrapping.component('img_4_cn',{
@@ -246,7 +363,6 @@ target.scrollIntoView(false);
         },
         template:`
         <img src="img/cn/q3_tbrrcn.PNG" class="q5_1">
-        <img src="img/cn/q3_tbrrcn.PNG" class="q5_2">
         `
     })
     
