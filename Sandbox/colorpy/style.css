@@ -5,6 +5,7 @@ body{
     -moz-user-select: none; /* Firefox */
     -webkit-user-select: none; /* Safari、Chromeなど */
     -ms-user-select: none; /* IE10かららしい */    
+    font-family:"MS Pゴシック",sans-serif;
 }
 
 hr{
@@ -90,8 +91,9 @@ hr{
 }
 
 .postage img{
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+    padding-right: 5px;
 }
 
 .postage p{
@@ -175,8 +177,9 @@ hr{
 .players img{
     margin:0;
     margin-right: 10px;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
+    padding-bottom: 5px;
     vertical-align: middle;
 }
 
@@ -218,10 +221,10 @@ hr{
 }
 
 #q1{
-    width: 600px;
+    width: 800px;
+    height:450px;
     margin:0 auto;
-    padding-bottom: 600px;
-    padding-top:50px;
+    padding-left: 5px;
 }
 
 .whiteout{
@@ -233,7 +236,7 @@ hr{
 
 .chplayer{
     vertical-align: middle;
-    font-size: 95%;
+    font-size: 85%;
 }
 
 #textch .player{
@@ -254,21 +257,19 @@ hr{
 #textch .player img {
     margin: 0;
     margin-right: 0;
-    width: 30px;
-    height: 30px;
+    padding-right:5px;
+    width: 25px;
+    height: 25px;
     vertical-align: middle;
 }
 
-.live{
+.icon .live img{
     margin-left: 12px;
-    background-color: #ED4245;
     padding-left: 5px;
     padding-right: 5px;
-    color: white;
-    font-weight: bold;
-    font-size:12px;
-    border-radius: 15px;
     vertical-align: middle;
+    border-radius: 0;
+    width:20px;
 }
 
 .voicepage{
@@ -281,19 +282,40 @@ hr{
 }
 
 .q5_1{
-    position: sticky;
-    left: 36%;
-    top: 0;
+    position: absolute;
+    left: auto;
+    top: -60px;
     margin-top: 55px;
     border-radius: 8px;
-    width: 700px;
+    padding-left: 60px;
+    background-color: #000;
+    padding-right: 13.8%;
+    padding-bottom: 5000px;
+    padding-top: 80px;
+    width: 70%;
+    height: auto;
+    max-width:1280px; 
+    max-height:720px; 
 }
 
 .q5_2{
-    position: sticky;
-    left: 36%;
-    top: 0;
-    margin-top: 490px;
+    position: absolute;
+    left: auto;
+    top: -60px;
+    margin-top: 55px;
     border-radius: 8px;
-    width: 700px;
+    padding-left: 60px;
+    background-color: #000;
+    padding-right: 13.8%;
+    padding-bottom: 5000px;
+    padding-top: 80px;
+    aspect-ratio: 16 / 9;
+    width: 70%;
+    height: auto;
+    max-width:1280px; 
+    max-height:720px; 
+}
+
+.icon img{
+    border-radius: 50%;
 }

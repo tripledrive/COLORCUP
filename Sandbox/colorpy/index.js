@@ -4,6 +4,7 @@ var check_flag = false;
 var noise = false;
 var color = false;
 var play = false;
+const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 let answer = [
     ["魔弾オープンブレイン","魔弾オープン・ブレイン"],
     ["バグルパズル","バグル・パズル"],
@@ -28,9 +29,16 @@ target.scrollIntoView(false);
                 color:0,
                 play:0,
                 players:[
-                    {name:"あああ",img:'img/drsk_icon.png'},
-                    {name:"BBB",img:'img/drsk_icon.png'},
-                    {name:"ccc",img:'img/drsk_icon.png'}],
+                    {name:"ドラ介(運営)",img:'img/drsk_icon.png'},
+                    {name:"████████",img:'img/cutie.png'},
+                    {name:"████████",img:'img/lion.png'},
+                    {name:"████████",img:'img/wh_lion.png'},
+                    {name:"████████",img:'img/drsk.png'},
+                    {name:"████████",img:'img/sukiya.png'},
+                    {name:"████████",img:'img/tsugu.png'},
+                    {name:"████████",img:'img/tokage.jpg'},
+                    {name:"████████",img:'img/kureko.png'},
+                    {name:"████████",img:'img/no_icon.png'},],
                 input:"",
                 progress:[0,0,0,0,0,0]
             }
@@ -47,7 +55,11 @@ target.scrollIntoView(false);
                 }
             },
             currentMode(){
-                return 'img_'+ String(this.currentFlag) + '_' + this.mode_1 + this.mode_2;
+                if(this.currentFlag == 4){
+                    return 'img_'+ String(this.currentFlag) + '_' + this.mode_1 + this.mode_2 + String(this.play);
+                }else{
+                    return 'img_'+ String(this.currentFlag) + '_' + this.mode_1 + this.mode_2;
+                }
             },
             answer(){
                 return 'ans_' + String(this.currentFlag) + '_' + String(this.progress[this.currentFlag]);
@@ -81,7 +93,8 @@ target.scrollIntoView(false);
                             this.progress[this.currentFlag] = 1
                             break;
                     }
-                    if(!check_flag){}
+                    if(!check_flag){
+                    }
                 }
             }
         }
@@ -90,27 +103,69 @@ target.scrollIntoView(false);
     // 魔弾オープン・ブレイン
     Wrapping.component('img_0_mc',{
         data(){
-            return{}
+            return{
+                img:"img/mc/q1_osbtprr.png"
+            }
         },
-        template:'<img src="img/mc/q1_osbtprr.png" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('img_0_cc',{
         data(){
             return{}
         },
-        template:'<img src="img/cc/q1_osbtprr.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img src="img/cc/q1_osbtprr.png" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('img_0_mn',{
         data(){
             return{}
         },
-        template:'<img src="img/mn/q1_osbtprr.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img src="img/mn/q1_osbtprr.png" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('img_0_cn',{
         data(){
             return{}
         },
-        template:'<img src="img/cn/q1_osbtprr.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img src="img/cn/q1_osbtprr.png" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('ans_0_1',{
         data(){
@@ -121,50 +176,124 @@ target.scrollIntoView(false);
         },
         template:`
         <div class="postage">
-    <div class="icon">
-        <img :src="imgs_d">
-    </div>
-    <div class="text">
-        <span class="name role_orgn">ドラ介(主催)</span><br>
-        <span class="text">正解です。</span>
-    </div>
-    </div>
+        <div class="icon">
+            <img :src="imgs_d">
+        </div>
+        <div class="text">
+            <span class="name role_orgn">ドラ介(主催)</span><br>
+            <span class="text">
+            【大会概要】<br>
+            DRSKカラー杯オンラインサーバーに入室頂き誠にありがとうございます。<br>
+            当サーバーは皆様にDRSKカラー杯運営の営むイベントを楽しんで頂くサーバーです。<br>
+            本日7月31日は、『DRSKカラー杯オンライン５ PHANTOM』のために開放しております。<br>
+            明日も明後日も明々後日も開催しております。<br>
+            私と一緒に終わりのないカラー杯を楽しみましょう。<br>
+            <br>
+            【サーバー説明】<br>
+            左欄の各チャンネルには、それぞれサブイベントとして謎が１問ずつ用意されています。<br>
+            各チャンネルのチャット入力欄に、答えとなるカードの正式名称を入力してください。<br>
+            正解であれば、同チャット欄において反応いたします。<br>
+            謎解きの作成は「てんろー」さんに作成していただきましたが、皆様と永遠にカラー杯を楽しむために、最終問題は白紙とさせていただきました。ご了承ください。<br>
+            <br>
+            ページを更新してしまったり、ブラウザバックをしてしまうと、謎の進捗情報がリセットされてしまいます。ご注意ください。<br>
+            また、ページのソースコードを閲覧したり、ファイルのURLを覗き見ることで解ける謎はありません。<br>
+            あらかじめご承知おきください。<br>
+            </span>
+        </div>
+        </div>
         <div class="postage">
-    <div class="icon">
-        <img :src="imgs_y">
-    </div>
-    <div class="text">
-        <span class="name">あなた</span><br>
-        <span class="text">魔弾オープン・ブレイン
-    </div>
-    </div>
+        <div class="icon">
+            <img :src="imgs_d">
+        </div>
+        <div class="text">
+            <span class="name role_orgn">ドラ介(主催)</span><br>
+            <span class="text">正解です。</span>
+        </div>
+        </div>
+        <div class="postage">
+        <div class="icon">
+            <img :src="imgs_y">
+        </div>
+        <div class="text">
+            <span class="name">あなた</span><br>
+            <span class="text">魔弾オープン・ブレイン
+        </div>
+        </div>
         `
     })
 
     // バグル・パズル
     Wrapping.component('img_1_mc',{
         data(){
-            return{}
+            return{
+                img:"img/mc/q4_pnzgir.png"
+            }
         },
-        template:'<img src="img/mc/q4_pnzgir.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('img_1_cc',{
         data(){
-            return{}
+            return{
+                img:"img/cc/q4_pnzgir.png"
+            }
         },
-        template:'<img src="img/cc/q4_pnzgir.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('img_1_mn',{
         data(){
-            return{}
+            return{
+                img:"img/mn/q4_pnzgir.png"
+            }
         },
-        template:'<img src="img/mn/q4_pnzgir.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('img_1_cn',{
         data(){
-            return{}
+            return{
+                img:"img/cn/q4_pnzgir.png"
+            }
         },
-        template:'<img src="img/cn/q4_pnzgir.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('ans_1_1',{
         data(){
@@ -198,27 +327,75 @@ target.scrollIntoView(false);
     //カラフル・ナスオ
     Wrapping.component('img_2_mc',{
         data(){
-            return{}
+            return{
+                img:"img/mc/q2_cflsrg.png"
+            }
         },
-        template:'<img src="img/mc/q2_cflsrg.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('img_2_cc',{
         data(){
-            return{}
+            return{
+                img:"img/cc/q2_cflsrg.png"
+            }
         },
-        template:'<img src="img/cc/q2_cflsrg.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('img_2_mn',{
         data(){
-            return{}
+            return{
+                img:"img/mn/q2_cflsrg.png"
+            }
         },
-        template:'<img src="img/mn/q2_cflsrg.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('img_2_cn',{
         data(){
-            return{}
+            return{
+                img:"img/cn/q2_cflsrg.png"
+            }
         },
-        template:'<img src="img/cn/q2_cflsrg.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('ans_2_1',{
         data(){
@@ -252,27 +429,75 @@ target.scrollIntoView(false);
     //再生妖精スズラン
     Wrapping.component('img_3_mc',{
         data(){
-            return{}
+            return{
+                img:"img/mc/q3_tbrrcn.png"
+            }
         },
-        template:'<img src="img/mc/q3_tbrrcn.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('img_3_cc',{
         data(){
-            return{}
+            return{
+                img:"img/cc/q3_tbrrcn.png"
+            }
         },
-        template:'<img src="img/cc/q3_tbrrcn.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('img_3_mn',{
         data(){
-            return{}
+            return{
+                img:"img/mn/q3_tbrrcn.png"
+            }
         },
-        template:'<img src="img/mn/q3_tbrrcn.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('img_3_cn',{
         data(){
-            return{}
+            return{
+                img:"img/cn/q3_tbrrcn.png"
+            }
         },
-        template:'<img src="img/cn/q3_tbrrcn.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('ans_3_1',{
         data(){
@@ -306,63 +531,145 @@ target.scrollIntoView(false);
     //オールデリート
     Wrapping.component('img_5_mc',{
         data(){
-            return{}
+            return{
+                img:"img/mc/q5_ocdrra.png"
+            }
         },
-        template:'<img src="img/mc/q5_ocdrra.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('img_5_cc',{
         data(){
-            return{}
+            return{
+                img:"img/cc/q5_ocdrra.png"
+            }
         },
-        template:'<img src="img/cc/q5_ocdrra.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('img_5_mn',{
         data(){
-            return{}
+            return{
+                img:"img/mn/q5_ocdrra.png"
+            }
         },
-        template:'<img src="img/mn/q5_ocdrra.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
     Wrapping.component('img_5_cn',{
         data(){
-            return{}
+            return{
+                img:"img/cn/q5_ocdrra.png"
+            }
         },
-        template:'<img src="img/cn/q5_ocdrra.PNG" id="q1">'
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/drsk_icon.png">
+        </div>
+        <div class="text">
+        <span class="name role_orgn">ドラ介(主催)</span><br>
+        <span class="text">以下の画像から推測されるカード名を答えよ。<br><img :src="img" id="q1"></span>
+        </div>
+        </div>
+        `
     })
 
     //動画ページ
     //「再生」が解かれていない場合の画像を置く
     //レイアウトまだ詰められてないので後日
     //長方形の画像をセットする
-    Wrapping.component('img_4_mc',{
+    Wrapping.component('img_4_mc0',{
         data(){
             return{}
         },
         template:`
-        <img src="img/cn/q3_tbrrcn.PNG" class="q5_1">
+        <img src="img/mc/movdie.PNG" class="q5_1">
         `
     })
-    Wrapping.component('img_4_cc',{
+    Wrapping.component('img_4_cc0',{
         data(){
             return{}
         },
         template:`
-        <img src="img/cn/q3_tbrrcn.PNG" class="q5_1">
+        <img src="img/cc/movdie.PNG" class="q5_1">
         `
     })
-    Wrapping.component('img_4_mn',{
+    Wrapping.component('img_4_mn0',{
         data(){
             return{}
         },
         template:`
-        <img src="img/cn/q3_tbrrcn.PNG" class="q5_1">
+        <img src="img/mn/movdie.PNG" class="q5_1">
         `
     })
-    Wrapping.component('img_4_cn',{
+    Wrapping.component('img_4_cn0',{
         data(){
             return{}
         },
         template:`
-        <img src="img/cn/q3_tbrrcn.PNG" class="q5_1">
+        <img src="img/cn/movdie.PNG" class="q5_1">
+        `
+    })
+
+    //「再生」が解かれている
+    Wrapping.component('img_4_mc1',{
+        data(){
+            return{}
+        },
+        template:`
+        <iframe src="https://www.youtube.com/embed/gEHheW2P3-E?controls=1&autoplay=1&mute=1&playsinline=0&loop=1&disablekb=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="q5_2"></iframe>
+        `
+    })
+    Wrapping.component('img_4_cc1',{
+        data(){
+            return{}
+        },
+        template:`
+        <iframe \src="https://www.youtube.com/embed/rEBe_r2hYTk?controls=1&autoplay=1&mute=1&playsinline=0&loop=1&disablekb=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="q5_2"></iframe>
+        `
+    })
+    Wrapping.component('img_4_mn1',{
+        data(){
+            return{}
+        },
+        template:`
+        <iframe src="https://www.youtube.com/embed/c684m6An-sQ?controls=1&autoplay=1&mute=1&playsinline=0&loop=1&disablekb=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="q5_2"></iframe>
+        `
+    })
+    Wrapping.component('img_4_cn1',{
+        data(){
+            return{}
+        },
+        template:`
+        <iframe src="https://www.youtube.com/embed/zbMby2CG4WI?controls=1&autoplay=1&mute=1&playsinline=0&loop=1&disablekb=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="q5_2"></iframe>
         `
     })
     
@@ -378,24 +685,6 @@ target.scrollIntoView(false);
         }
     },
     template:`
-    <div class="postage">
-    <div class="icon">
-        <img :src="imgs">
-    </div>
-    <div class="text">
-        <span class="name role_orgn">ドラ介(主催)</span><br>
-        <span class="text">【大会概要】<br>
-            <br>
-            DRSKカラー杯オンラインサーバーに入室頂き誠にありがとうございます。<br>
-            当サーバーは皆様にDRSKカラー杯運営の営むイベントを楽しんで頂くサーバーです。<br>
-            <br>
-            <br>
-            イベントにおきまして、フィーチャーマッチ他、試合風景をビデオ撮影を行う場合があります。<br>
-            撮影した映像はYouTubeやTwitterで使用させて頂く場合があります。<br>
-            入賞者のデッキリストはツイッター上で公開させていただく場合がございます。<br>
-            あらかじめご了承ください。</span>
-    </div>
-    </div>
     <hr width="95%" noshade="">
     <p id="top_tex">{{subtitle}}</p>
     <h2 id="top">{{title}}</h2>`
@@ -406,40 +695,7 @@ target.scrollIntoView(false);
                 imgs:'img/drsk_icon.png',
             }
         },
-        template:`
-        <div class="postage">
-        <div class="icon">
-            <img :src="imgs">
-        </div>
-        <div class="text">
-            <span class="name role_orgn">ドラ介(主催)</span><br>
-            <span class="text">
-            【大会の流れ】<br>
-            <br>
-            ■大会開始前(受付)<br>
-            来場されましたらまず#参加受付 もしくは#参加受付（当日枠用） へ<br>
-            ・Tonamelで入力したエントリー名<br>
-            ・大会詳細の確認の有無(ルール確認しましたと一言お願いします)<br>
-            をお送りください。<br>
-            その後運営より「参加者」のロールが付与されれば、エントリー完了です。<br>
-            <br>
-            <br>
-            ■各試合開始前<br>
-            各予選の対戦組み合わせはTonamelのトーナメント表にて発表しその旨をdiscord内で@参加者宛にアナウンスさせて頂きます。<br>
-            アナウンス後は指定されたテーブルにご着席ください。<br>
-            試合開始タイミングは @参加者 で通知いたします。<br>
-            <br>
-            ■各試合終了後<br>
-            勝者の方は#対戦結果受付にてテーブル番号と結果を書き込んでください。<br>
-            (必ず勝者が書き込むようお願いします)<br>
-            <br>
-            <br>
-            ■サブイベント<br>
-            謎解きはスイスドロー3回戦終了時より #９枚の謎（step１）にて解禁されます。<br>
-            お手隙の際にぜひお楽しみください</span>
-        </div>
-        </div>
-        <hr width="95%" noshade="">`
+        template:`<hr width="95%" noshade="">`
     })
     Wrapping.component('text_2',{
         data(){
@@ -447,25 +703,7 @@ target.scrollIntoView(false);
                 imgs:'img/drsk_icon.png',
             }
         },
-        template:`
-        <div class="postage">
-        <div class="icon">
-            <img :src="imgs">
-        </div>
-        <div class="text">
-            <span class="name role_orgn">ドラ介(主催)</span><br>
-            <span class="text">
-            【謎解きルール】<br>
-            <br>
-            決勝戦が始まり次第、それぞれのテキストチャンネルに謎が張り出されます。<br>
-            各謎を解き、すべてのクリアを目指してください。<br>
-            また、本ページは更新(F5)や戻るボタンを押すと進捗状況がリセットされます。<br>
-            十分にご注意ください。<br>
-            <br>
-        </div>
-        </div>
-        <hr width="95%" noshade="">
-        `
+        template:`<hr width="95%" noshade="">`
     })
     Wrapping.component('text_3',{
         data(){
@@ -474,38 +712,7 @@ target.scrollIntoView(false);
             }
         },
         template:`
-        <div class="postage">
-        <div class="icon">
-            <img :src="imgs">
-        </div>
-        <div class="text">
-            <span class="name role_orgn">ドラ介(主催)</span><br>
-            <span class="text">
-            【会場案内】<br>
-            <br>
-            ■FIRST<br>
-            #【必読】はじめに <br>
-            大会概要、主催挨拶が記述されています。<br>
-            参加前に必ず一読お願いします。<br>
-            <br>
-            #【必読】大会ルール<br>
-            当大会のルールが記述されています。<br>
-            参加前に必ず一読お願いします。<br>
-            <br>
-            #【必読】会場案内<br>
-            ここです。<br>
-            参加前に必ず一読お願いします。<br>
-            <br>
-            #連絡（大会開始前） <br>
-            大会開始前(参加者ロール付与前)に全体もしくは個人に連絡を取る際に使う場です。<br>
-            <br>
-            #お知らせ・告知 <br>
-            カラー杯に関する告知や宣伝を行っている場です。<br>
-            次回大会やイベントの予定も載せてあるので、お手隙の際にぜひご覧ください。<br>
-            </div>
-            </div>
-            <hr width="95%" noshade="">
-        `
+        <hr width="95%" noshade="">`
     })
     Wrapping.component('text_5',{
         data(){
@@ -514,17 +721,6 @@ target.scrollIntoView(false);
             }
         },
         template:`
-        <div class="postage">
-        <div class="icon">
-            <img :src="imgs">
-        </div>
-        <div class="text">
-            <span class="name role_orgn">■■■■■■</span><br>
-            <span class="text">
-            現在、このチャンネルには投稿がありません。<br>
-            <br>
-        </div>
-        </div>
         <hr width="95%" noshade="">
         `
     })
@@ -536,10 +732,7 @@ target.scrollIntoView(false);
                 imgs:'',
             }
         },
-        template:`
-        <div class="voicepage">
-            <component v-bind:is="currentMode"></component>
-        </div>`
+        template:``
     })
     Wrapping.component('text_4_1',{
         data(){
@@ -547,7 +740,7 @@ target.scrollIntoView(false);
                 imgs:'',
             }
         },
-        template:`<div class="voicepage"></div>`
+        template:``
     })
 Wrapping.mount('#wrap')
 

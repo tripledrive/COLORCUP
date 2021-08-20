@@ -1,0 +1,43 @@
+body{
+    background-color: #202225;
+    overflow-y: hidden;
+    user-select: none; /* CSS3 */
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Safari、Chromeなど */
+    -ms-user-select: none; /* IE10かららしい */    
+    font-family:"MS Pゴシック",sans-serif;
+    color: aliceblue;
+}
+
+.logo img{
+    width:30%;
+    height:30%;
+    margin-left: 33%;
+    margin-top: 5%;
+    animation:1.7s linear infinite rotation;
+}
+
+@keyframes rotation{
+    0%{ transform:rotate(0);}
+    10%{ transform:rotate(25deg);}
+    80%{ transform:rotate(-360deg); }
+    100%{ transform:rotate(-360deg); }
+  }
+
+#view_time{
+
+    font-size: 32px;
+    text-align: center;
+    animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0} 
+    100% {opacity: 1} 
+}
+
+.addclass{
+    color: firebrick;
+    font-size: 32px;
+    text-align: center;
+}
