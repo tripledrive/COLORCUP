@@ -11,7 +11,8 @@ let answer = [
     ["カラフルナスオ","カラフル・ナスオ"],
     ["再生妖精スズラン"],
     [""],
-    ["オールデリート","オール・デリート"]
+    ["オールデリート","オール・デリート"],
+    ["霊","れい","レイ"]
 ];
 let progress = [0,0,0,0,0,0]
 
@@ -25,11 +26,13 @@ target.scrollIntoView(false);
                 bugFlag:0,
                 mode_1:"m", //mc cc mn cn 
                 mode_2:"c", //mono|color_clear|noizy
+                tenlow:0,
                 noise:0,
                 color:0,
                 play:0,
                 players:[
-                    {name:"ドラ介(運営)",img:'img/drsk_icon.png'},
+                    {name:"ドラ介(主催)",img:'img/drsk_icon.png'},
+                    {name:"てんろー(運営)",img:'img/tenlow.png'},
                     {name:"████████",img:'img/cutie.png'},
                     {name:"████████",img:'img/lion.png'},
                     {name:"████████",img:'img/wh_lion.png'},
@@ -40,7 +43,7 @@ target.scrollIntoView(false);
                     {name:"████████",img:'img/kureko.png'},
                     {name:"████████",img:'img/no_icon.png'},],
                 input:"",
-                progress:[0,0,0,0,0,0]
+                progress:[0,0,0,0,0,0,0]
             }
         },
         computed:{
@@ -87,7 +90,9 @@ target.scrollIntoView(false);
                                 this.play = 1;
                             }else if(this.currentFlag == 5){
                                 jQuery('.whiteout').css('display','block');
-                                window.location.href = "https://note.com/preview/n468b2d55a290?prev_access_key=bfb22913e60e36c1be53f6b3e62f08c5";
+                                window.location.href = "https://tripledrive.github.io/COLORCUP/Sandbox/colorpy/cpage_qdlta.html";
+                            }else if(this.currentFlag == 6){
+                                this.tenlow = 1;
                             }
                             jQuery('.whiteout').fadeOut('normal');
                             this.progress[this.currentFlag] = 1
@@ -195,6 +200,9 @@ target.scrollIntoView(false);
             正解であれば、同チャット欄において反応いたします。<br>
             謎解きの作成は「てんろー」さんに作成していただきましたが、皆様と永遠にカラー杯を楽しむために、最終問題は白紙とさせていただきました。ご了承ください。<br>
             <br>
+            【注意事項】
+            推奨環境はパソコン、ブラウザは最新版のFireFox/Chrome/Safariのみ動作確認しております。<br>
+            推奨環境以外でのプレイは非常に難しいため、ご注意ください。<br>
             ページを更新してしまったり、ブラウザバックをしてしまうと、謎の進捗情報がリセットされてしまいます。ご注意ください。<br>
             また、ページのソースコードを閲覧したり、ファイルのURLを覗き見ることで解ける謎はありません。<br>
             あらかじめご承知おきください。<br>
@@ -722,6 +730,84 @@ target.scrollIntoView(false);
         },
         template:`
         <hr width="95%" noshade="">
+        `
+    })
+    Wrapping.component('text_6',{
+        data(){
+            return{
+                imgs:'img/no_icon.png',
+            }
+        },
+        template:`
+        <div class="postage">
+        <div class="icon">
+        <img src="img/tenlow.png">
+        </div>
+        <div class="text">
+        <span class="name role_ten">てんろー</span><br>
+        <span class="text">
+        こんにちは！<br>
+この度謎の作成を依頼されましたてんろーです。<br>
+にっくき暑さと戦いながら、頑張って制作しました。<br>
+霊というのがひとつのテーマでしたが、ちょっと盛り込むのは難しかったですね。<br>
+とはいえ、夏らしいフレーバーはつけられたのではないかと。<br>
+入室していただいた皆様に少しでも楽しんでいただければ幸いです。<br>
+力を入れた部分として、今回は謎を解くと「その答えに応じていろんなところに変化が現れる」ようにしました。<br>
+しっかり作って、大掛かりな謎にできたと思います。変化が無いと解けない謎もあるかも……？<br>
+ろしくお願いします。長文失礼しました。<br>
+        </span>
+        </div>
+        </div>
+        <hr width="95%" noshade="">
+        `
+    })
+
+    Wrapping.component('ans_6_1',{
+        data(){
+            return{
+                imgs_d:'img/tenlow.png',
+                imgs_y:'img/no_icon.png'
+            }
+        },
+        template:`
+        <div class="postage">
+    <div class="icon">
+        <img :src="imgs_d">
+    </div>
+    <div class="text">
+        <span class="name role_ten">てんろー(運営)</span><br>
+        <span class="text">
+        改めまして、謎を制作したてんろーです。<br>
+        偽のDRSKに気づかれないよう仕込んだ縦読みに気づいてくれてありがとうございます。<br>
+        このテキストはバグを突いて送信したものであり、主催の偽DRSKからは見えていません。<br>
+        <br>
+        このチャンネルは7月31日で時が止まっています。永遠に終わらないカラー杯が続けられている、異常な状態です。<br>
+        あのDRSKは偽物で、このチャンネルは本来存在してはいけないチャンネルです。<br>
+        それを解決するために、謎解きに少し仕掛けをしました。<br>
+        そこで、謎が解けるあなたに協力していただきたいのです。<br>
+        最終問題を解き明かして、こちら側のカラー杯を終わらせてください。<br>
+        <br>
+        最終問題は偽DRSKの指示に従って白紙で作ったように見せかけたダミーデータです。<br>
+        謎を解いてサーバーに変化を与えることで、白紙ではなくなっていくように制作されています。<br>
+        これは謎を解いていないDRSKからはわかりません。<br>
+        最後の謎にある鍵を仕込んだのですが、「サブイベントの内容として」起動することが必要でした。<br>
+        なので、ここで直接答えを教えることはできません。自力で謎を解いていただく必要があります。<br>
+        もちろん自分は「謎製作者」であり運営の協力者であるため、謎を自分で回答することはできません。<br>
+        <br>
+        謎を解いて真実の最終問題を浮かび上がらせ、終わらないカラー杯を終わらせられるのはプレイヤーであるあなただけです。<br>
+        どうかよろしくお願いします。<br>
+        </span>
+    </div>
+    </div>
+        <div class="postage">
+    <div class="icon">
+        <img :src="imgs_y">
+    </div>
+    <div class="text">
+        <span class="name">あなた</span><br>
+        <span class="text">霊
+    </div>
+    </div>
         `
     })
 
