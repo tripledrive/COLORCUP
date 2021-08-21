@@ -90,7 +90,9 @@ target.scrollIntoView(false);
                                 this.play = 1;
                             }else if(this.currentFlag == 5){
                                 jQuery('.whiteout').css('display','block');
+                                setTimeout(function(){
                                 window.location.href = "https://tripledrive.github.io/COLORCUP/Sandbox/colorpy/cpage_qdlta.html";
+                                }, 1.5*1000);
                             }else if(this.currentFlag == 6){
                                 this.tenlow = 1;
                             }
@@ -200,7 +202,7 @@ target.scrollIntoView(false);
             正解であれば、同チャット欄において反応いたします。<br>
             謎解きの作成は「てんろー」さんに作成していただきましたが、皆様と永遠にカラー杯を楽しむために、最終問題は白紙とさせていただきました。ご了承ください。<br>
             <br>
-            【注意事項】
+            【注意事項】<br>
             推奨環境はパソコン、ブラウザは最新版のFireFox/Chrome/Safariのみ動作確認しております。<br>
             推奨環境以外でのプレイは非常に難しいため、ご注意ください。<br>
             ページを更新してしまったり、ブラウザバックをしてしまうと、謎の進捗情報がリセットされてしまいます。ご注意ください。<br>
