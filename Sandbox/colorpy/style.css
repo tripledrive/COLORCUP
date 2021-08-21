@@ -38,6 +38,14 @@ hr{
 #head2{
     grid-row: 1 / 2;
     background-color: #36393F;
+    color: aliceblue;
+}
+
+#head2 #tex{
+    margin-top: 5px;
+    margin-left: 10px;
+    padding-top: 25px;
+    vertical-align: middle;
 }
 
 #main{
